@@ -55,20 +55,36 @@ While completing this assignment I learned how to:
 
 ### Description
 
+For this assignment, I had to wire and code an LED to blink on and off at a set rate.
 
+### Code
 
-### Evidence
+/*
+Sam Funk
+LED Blink Revisited
+Blinks an LED at a set rate.
+*/
 
+void setup() {
+  Serial.begin(9600);
+  pinMode(7, OUTPUT);
+}
 
-
-### Image
-
+void loop() {
+  digitalWrite(7, HIGH);
+  delay(500);
+  digitalWrite(7, LOW);
+  delay(500);
+}
 
 
 ### Reflection
 
-While completing this assignment I learned how to:
-* 
+While completing this assignment I (re)learned how to:
+* setup an Arduino
+* power a pin
+* turn a pin on and off
+* wire an LED
 
 ---
 
