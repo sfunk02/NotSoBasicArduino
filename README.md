@@ -95,7 +95,7 @@ While completing this assignment I (re)learned how to:
 For this assignment, I used the same wiring as the LED Blink assignment, but altered the code so the LED would only blink 5 times.
 
 ### Code
-
+```C++
 /*
 Sam Funk
 November 25, 2020
@@ -122,7 +122,7 @@ void loop() {
     digitalWrite(LED, LOW); //After the LED has blinked 5 times, it will turn off
   }
 }
-
+```
 
 ### Reflection
 
