@@ -58,7 +58,7 @@ While completing this assignment I learned how to:
 For this assignment, I had to wire and code an LED to blink on and off at a set rate.
 
 ### Code
-
+```C++
 /*
 Sam Funk
 LED Blink Revisited
@@ -76,7 +76,7 @@ void loop() {
   digitalWrite(7, LOW);
   delay(500);
 }
-
+```
 
 ### Reflection
 
