@@ -14,20 +14,56 @@
 
 ### Description
 
+For this assignment, I had to code an ultrasonic sensor so that it would detect distance and display it in the serial monitor. Then I had to code a continuous servo to spin at a speed based on the distance detected by the ultrasonic sensor. The servo spins one way from 0-45cm and the other way from 45cm-90cm.
 
+### Code
 
-### Evidence
+```C++
+/*
+Sam Funk
+HC-SRO4 and Continuous Servo - servo speed changes based on distance measured
+12/18/20
+*/
 
+const int out=13;
+const int in=12;
+#include <Servo.h>
+Servo myservo;
 
+void setup() {
+Serial.begin(9600);
+pinMode(in, INPUT);
+pinMode(out, OUTPUT);
+myservo.attach(9);
+}
 
-### Image
-
-
+void loop() {
+long dur;
+long dis;
+long tocm;
+digitalWrite(out, LOW);
+delayMicroseconds(2);
+digitalWrite(out, HIGH);
+delayMicroseconds(10);
+digitalWrite(out, LOW);
+dur=pulseIn(in, HIGH);
+tocm=microsecondsToCentimeters(dur);
+Serial.println(String(tocm));
+delay(100);
+myservo.write(tocm*2);
+}
+long microsecondsToCentimeters(long microseconds)
+{
+return microseconds / 29 / 2;
+}
+```
 
 ### Reflection
 
 While completing this assignment I learned how to:
-* 
+* use functions
+* code an ultrasonic sensor
+* code a continuous servo
 
 ---
 
