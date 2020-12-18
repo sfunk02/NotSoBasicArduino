@@ -137,19 +137,47 @@ While completing this assignment I learned how to:
 
 ### Description
 
+For this assignment, I had to wire and code a photoresistor so that it would turn on an LED light when light levels in the room decreased. 
 
+### Code
 
-### Evidence
+```C++
+/*
+Sam Funk
+Photoresistor- lights up an LED based on how dark the room is
+12-17-20
+*/
 
+int Photo = A0;
+int lightlevel;
+int LED = 8;
 
+void setup() {
+  pinMode(LED, OUTPUT);
+  pinMode(Photo, OUTPUT);
+  Serial.begin(9600);
+}
 
-### Image
+void loop() {
+lightlevel = analogRead(Photo);
+Serial.println(lightlevel);
+delay(250);
 
+if (lightlevel < 6) {
+  digitalWrite(LED, HIGH);
+  
+}
 
+else {
+  digitalWrite(LED, LOW);
+}
+}
+```
 
 ### Reflection
 
 While completing this assignment I learned how to:
-* 
+* Code a photoresistor
+* Use an analog pin to transfer signal strength data
 
 ---
