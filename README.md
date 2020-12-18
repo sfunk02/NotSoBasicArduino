@@ -71,15 +71,40 @@ While completing this assignment I learned how to:
 
 ### Description
 
+For this assignment, I had to use the NewPing library to code an ultrasonic sensor that detects distance. I made an LED blink based on the distance detected. (closer was faster)
 
+### Code
 
-### Evidence
+```C++
+/*
+Sam Funk
+NewPing() - uses NewPing controlled HC-SR04 sensor to blink an LED based on the distance detected.
+  (closer is faster)
+12/18/20
+*/
 
+#include <NewPing.h>
 
+#define TRIGGER_PIN 12
+#define ECHO_PIN 11
+#define MAX_DISTANCE 200
 
-### Image
+NewPing myHC_SR04(TRIGGER_PIN, ECHO_PIN, MAX_DISTANCE);
 
+void setup() {
+  Serial.begin(9600);
+  pinMode(9, OUTPUT);
+}
 
+void loop() {
+  Serial.println(myHC_SR04.ping_cm());
+  delay(5);
+  digitalWrite(9, HIGH);
+  delay(myHC_SR04.ping_cm()*10);
+  digitalWrite(9, LOW);
+  delay(myHC_SR04.ping_cm()*10);
+}
+```
 
 ### Reflection
 
